@@ -1,0 +1,9 @@
+import React from "react";
+
+const Wrapper = (chil) => {
+  return <div className="max-w-screen-xl mx-auto px-4 py-1">
+    {children}
+  </div>;
+};
+
+export default Wrapper;
