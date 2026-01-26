@@ -1,11 +1,10 @@
-import Category from '@/components/widgets/Category'
 import React from 'react'
 
 const page = () => {
   return (
-    <>
-    <Category/>
-    </>
+    <div>
+      Cart
+    </div>
   )
 }
 
