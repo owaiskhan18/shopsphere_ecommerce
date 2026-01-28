@@ -12,9 +12,9 @@ interface Product {
 }
 
 interface FlashSaleSectionProps {
-  sectionTitle: string;   // e.g., "Flash Sales"
+  sectionTitle: string;
   products: Product[];
-  buttonText?: string;    // e.g., "View All Products"
+  buttonText?: string;
 }
 
 const FlashSaleSection: React.FC<FlashSaleSectionProps> = ({
@@ -34,8 +34,8 @@ const FlashSaleSection: React.FC<FlashSaleSectionProps> = ({
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="mt-8 flex justify-around flex-wrap gap-4">
+      {/* Cards Container */}
+      <div className="mt-8 flex flex-col md:flex-row md:flex-wrap gap-6 justify-center">
         {products.map((product, idx) => (
           <ProductCard key={idx} {...product} />
         ))}
@@ -43,7 +43,7 @@ const FlashSaleSection: React.FC<FlashSaleSectionProps> = ({
 
       {/* Button */}
       <div className="flex justify-center items-center mt-10">
-        <button className="bg-[#DB4444] text-white px-3 py-2 rounded-sm cursor-pointer">
+        <button className="bg-[#DB4444] text-white px-4 py-2 rounded-sm cursor-pointer">
           {buttonText}
         </button>
       </div>

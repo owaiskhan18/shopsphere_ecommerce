@@ -6,7 +6,6 @@ import Apple from "../../assests/images/apple.png";
 import Mobile from "../../assests/images/mobile.png";
 import PromoBanner from "../shared/PromoBanner";
 
-
 const Category = () => {
   const items = [
     "Woman’s Fashion",
@@ -23,11 +22,13 @@ const Category = () => {
   return (
     <Wrapper>
       <section className="flex flex-col lg:flex-row gap-6 lg:gap-10 my-8">
-
         {/* Left Column - Category List */}
         <div className="w-full lg:w-64 flex-shrink-0 lg:border-r border-gray-300 lg:pr-4">
           {items.map((item, index) => (
-            <div key={index} className="flex items-center justify-between gap-2 py-1">
+            <div
+              key={index}
+              className="flex items-center justify-between gap-2 py-1"
+            >
               <CategoryList item={item} />
               {index < 2 && <MdKeyboardArrowRight className="text-gray-500" />}
             </div>

@@ -6,13 +6,11 @@ type TextProps = {
   text: React.ReactNode;
 };
 
-const SectionStart = ({ text}: TextProps) => {
+const SectionStart = ({ text }: TextProps) => {
   return (
     <div className="flex items-center gap-3">
       <Image src={Rectangle} alt="rectangle" />
-      <h3 className="font-semibold text-lg text-[#DB4444]">
-        {text}
-      </h3>
+      <h3 className="font-semibold text-lg text-[#DB4444]">{text}</h3>
     </div>
   );
 };

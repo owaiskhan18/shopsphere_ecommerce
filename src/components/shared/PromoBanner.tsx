@@ -5,21 +5,21 @@ import { GoArrowRight } from "react-icons/go";
 import type { StaticImageData } from "next/image";
 
 interface PromoBannerProps {
-  logo?: string | StaticImageData; // optional, image or text
+  logo?: string | StaticImageData;
   title?: string;
-  subtitle: string; 
+  subtitle: string;
   buttonText?: string;
   buttonLink?: string;
   mainImage: string | StaticImageData;
 
   // optional button styling
-  color?: string; // text color
-  bgColor?: string; // background color
-  px?: string; // padding-x
-  py?: string; // padding-y
+  color?: string;
+  bgColor?: string;
+  px?: string;
+  py?: string;
   round?: string;
   cursor?: string;
-  shade?: string
+  shade?: string;
 
   // optional arrow
   showArrow?: boolean;
@@ -38,13 +38,14 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
   py = "py-2",
   round = "rounded-sm",
   cursor = "cursor-pointer",
-  showArrow = false, // default false
-  shade = 'shadow-white'
+  showArrow = false,
+  shade = "shadow-white",
 }) => {
   return (
-    <div className="bg-black w-full flex flex-col md:flex-row items-center justify-between
-                    px-4 sm:px-8 md:px-12 lg:px-20 py-8 gap-6">
-
+    <div
+      className="bg-black w-full flex flex-col md:flex-row items-center justify-between
+                    px-4 sm:px-8 md:px-12 lg:px-20 py-8 gap-6"
+    >
       {/* Text Section */}
       <div className="text-white flex flex-col items-center md:items-start text-center md:text-left">
         {(logo || title) && (
@@ -76,18 +77,16 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
       </div>
 
       {/* Image Section */}
-<div className="w-full md:w-auto flex justify-center">
-  <div className={`relative w-60 sm:w-72 md:w-80 lg:w-96 ${shade}`}>
-    <Image
-      src={mainImage}
-      alt={title || subtitle}
-      className="object-contain w-full h-full relative z-10"
-      priority
-    />
-  </div>
-</div>
-
-     
+      <div className="w-full md:w-auto flex justify-center">
+        <div className={`relative w-60 sm:w-72 md:w-80 lg:w-96 ${shade}`}>
+          <Image
+            src={mainImage}
+            alt={title || subtitle}
+            className="object-contain w-full h-full relative z-10"
+            priority
+          />
+        </div>
+      </div>
     </div>
   );
 };

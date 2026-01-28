@@ -15,7 +15,6 @@ const page = () => {
   return (
     <Wrapper>
       <section className={styles.section}>
-        
         {/* Image */}
         <div className={`flex-1 ${styles.imageBox}`}>
           <Image
@@ -29,9 +28,7 @@ const page = () => {
         <div className={`flex-1 ${styles.formBox}`}>
           <div className="my-4 flex flex-col gap-y-3.5">
             <h2 className="text-3xl font-bold">Create an account</h2>
-            <h4 className="text-md text-gray-600">
-              Enter your details below
-            </h4>
+            <h4 className="text-md text-gray-600">Enter your details below</h4>
           </div>
 
           {/* Inputs */}

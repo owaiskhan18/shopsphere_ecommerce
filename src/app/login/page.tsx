@@ -14,7 +14,6 @@ const page = () => {
   return (
     <Wrapper>
       <section className={styles.section}>
-        
         {/* Image */}
         <div className={`flex-1 ${styles.imageBox}`}>
           <Image
@@ -54,9 +53,7 @@ const page = () => {
               Log in
             </button>
 
-            <p className="text-[#DB4444] cursor-pointer">
-              Forget Password?
-            </p>
+            <p className="text-[#DB4444] cursor-pointer">Forget Password?</p>
           </div>
 
           {/* Signup */}

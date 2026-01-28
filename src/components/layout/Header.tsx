@@ -27,105 +27,106 @@ const Header = () => {
   ];
 
   return (
-    <Wrapper>
-      <header className="flex justify-between items-center bg-white px-4 py-3 relative border-b">
-        {/* Logo */}
-        <Link href="/">
-          <Image
-            src={Logo}
-            alt="ShopSphere Logo"
-            className="h-12 w-12 md:h-16 md:w-16 rounded-full cursor-pointer"
-          />
-        </Link>
-
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-x-6 text-black font-medium">
-          {navLinks.map((link) => (
-            <li key={link.href} className="hover:text-gray-600 transition">
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Desktop Right */}
-        <div className="hidden md:flex items-center gap-x-5 relative">
-          {/* Search */}
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-64 lg:w-72 border rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none"
+    <header className="sticky top-0 z-50 bg-white border-b">
+      <Wrapper>
+        <div className="flex justify-between items-center px-4 py-3">
+          {/* Logo */}
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="ShopSphere Logo"
+              className="h-12 w-12 md:h-16 md:w-16 rounded-full cursor-pointer"
             />
-            <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
+          </Link>
+
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex gap-x-6 text-black font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href} className="hover:text-gray-600 transition">
+                <Link href={link.href}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Desktop Right */}
+          <div className="hidden md:flex items-center gap-x-5 relative">
+            {/* Search */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="w-64 lg:w-72 border rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none"
+              />
+              <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
+            </div>
+
+            {/* Wishlist */}
+            <Link href="/wishlist" className="text-xl">
+              <FiHeart />
+            </Link>
+
+            {/* Cart */}
+            <Link href="/cart" className="relative text-xl">
+              <FiShoppingCart />
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                2
+              </span>
+            </Link>
+
+            {/* User Icon */}
+            <div className="relative">
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="text-xl cursor-pointer"
+              >
+                <FiUser className="bg-[#DB4444] text-white text-2xl rounded-full p-1" />
+              </button>
+
+              {userMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white border rounded shadow-md">
+                  <button className="flex items-center gap-2 px-4 py-2 text-sm w-full hover:bg-gray-100">
+                    <FiLogOut /> Logout
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Wishlist */}
-          <Link href="/wishlist" className="text-xl">
-            <FiHeart />
-          </Link>
-
-          {/* Cart */}
-          <Link href="/cart" className="relative text-xl">
-            <FiShoppingCart />
-            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-              2
-            </span>
-          </Link>
-
-          {/* User Icon */}
-          <div className="relative">
+          {/* Mobile Icons */}
+          <div className="flex items-center gap-x-4 md:hidden relative">
+            {/* User */}
             <button
               onClick={() => setUserMenuOpen(!userMenuOpen)}
               className="text-xl cursor-pointer"
             >
-              <FiUser className="bg-[#DB4444] text-white text-2xl rounded-full p-1" />
+              <FiUser className="bg-[#DB4444] text-2xl text-white rounded-full p-1" />
             </button>
 
-            {/* Dropdown */}
+            {/* Cart */}
+            <Link href="/cart" className="relative text-xl">
+              <FiShoppingCart />
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                2
+              </span>
+            </Link>
+
+            {/* Mobile Menu */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-2xl"
+            >
+              {mobileMenuOpen ? <FiX /> : <FiMenu />}
+            </button>
+
+            {/* Mobile User Dropdown */}
             {userMenuOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-white border rounded shadow-md">
-                <button className="flex items-center cursor-pointer gap-2 px-4 py-2 text-sm w-full hover:bg-gray-100">
+              <div className="absolute top-12 right-0 w-32 bg-white border rounded shadow-md">
+                <button className="flex items-center gap-2 px-4 py-2 text-sm w-full hover:bg-gray-100">
                   <FiLogOut /> Logout
                 </button>
               </div>
             )}
           </div>
-        </div>
-
-        {/* Mobile Icons */}
-        <div className="flex items-center gap-x-4 md:hidden relative">
-          {/* User */}
-          <button
-            onClick={() => setUserMenuOpen(!userMenuOpen)}
-            className="text-xl cursor-pointer"
-          >
-            <FiUser className="bg-[#DB4444] text-2xl text-white rounded-full p-1" />
-          </button>
-
-          {/* Cart */}
-          <Link href="/cart" className="relative text-xl">
-            <FiShoppingCart />
-            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-              2
-            </span>
-          </Link>
-
-          {/* Menu */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-2xl"
-          >
-            {mobileMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-
-          {/* Mobile User Dropdown */}
-          {userMenuOpen && (
-            <div className="absolute top-12 right-0 w-32 bg-white border rounded shadow-md">
-              <button className="flex items-center cursor-pointer gap-2 px-4 py-2 text-sm w-full hover:bg-gray-100">
-                <FiLogOut /> Logout
-              </button>
-            </div>
-          )}
         </div>
 
         {/* Mobile Menu */}
@@ -156,8 +157,8 @@ const Header = () => {
             </Link>
           </ul>
         )}
-      </header>
-    </Wrapper>
+      </Wrapper>
+    </header>
   );
 };
 

@@ -23,7 +23,9 @@ const Footer = () => {
             <div className={styles["footer-section"]}>
               <h2 className="font-bold cursor-pointer">Exclusive</h2>
               <h3 className="cursor-pointer">Subscribe</h3>
-              <h4 className="font-light cursor-pointer">Get 10% off your first order</h4>
+              <h4 className="font-light cursor-pointer">
+                Get 10% off your first order
+              </h4>
 
               <div className={styles["email-input-container"]}>
                 <input
@@ -40,7 +42,9 @@ const Footer = () => {
             {/* 2 - Support */}
             <div className={styles["footer-section"]}>
               <h2 className="font-bold cursor-pointer">Support</h2>
-              <span className="cursor-pointer">111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.</span>
+              <span className="cursor-pointer">
+                111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.
+              </span>
               <span className="cursor-pointer">exclusive@gmail.com</span>
               <span className="cursor-pointer">+88015-88888-9999</span>
             </div>
@@ -92,7 +96,11 @@ const Footer = () => {
 
           {/* Footer copyright: flex row */}
           <div className="flex justify-center items-center mt-12 gap-2 text-sm text-zinc-400">
-            <Image src={Vector} alt="copyright" className="w-4 h-4 cursor-pointer border border-white rounded-full p-1" />
+            <Image
+              src={Vector}
+              alt="copyright"
+              className="w-4 h-4 cursor-pointer border border-white rounded-full p-1"
+            />
             <span>Copyright Rimel 2022. All right reserved</span>
           </div>
         </footer>

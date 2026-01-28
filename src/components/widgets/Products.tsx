@@ -26,15 +26,39 @@ const products = [
     discount: "-30%",
     rating: 5,
   },
+  {
+    title: "RGB Gaming Mouse",
+    price: "$50",
+    imageSrc: Remote,
+    discount: "-25%",
+    rating: 4,
+  },
+  {
+    title: "Gaming Headset",
+    price: "$80",
+    imageSrc: Remote,
+    discount: "-40%",
+    rating: 5,
+  },
+  {
+    title: "Gaming Chair",
+    price: "$150",
+    imageSrc: Remote,
+    discount: "-20%",
+    rating: 4,
+  },
 ];
 
-const NewCategory: React.FC = () => {
+const Products: React.FC = () => {
   return (
     <Wrapper>
-      <SectionStart text="Categories" />
-      <FlashSaleSection sectionTitle="Browse By Category" products={products} />
+      <SectionStart text="Our Products" />
+      <FlashSaleSection
+        sectionTitle="Explore Our Products"
+        products={products}
+      />
     </Wrapper>
   );
 };
 
-export default NewCategory;
+export default Products;

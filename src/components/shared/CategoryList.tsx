@@ -5,12 +5,7 @@ type ItemProps = {
 };
 
 const CategoryList = ({ item }: ItemProps) => {
-  return (
-    <div className="text-md">
-      {item}
-    </div>
-  );
+  return <div className="text-md">{item}</div>;
 };
 
 export default CategoryList;
-
