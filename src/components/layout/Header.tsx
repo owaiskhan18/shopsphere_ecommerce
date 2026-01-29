@@ -27,20 +27,21 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b">
+    <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
       <Wrapper>
-        <div className="flex justify-between items-center px-4 py-3">
+        <div className="flex justify-between items-center py-3 px-4 md:px-6">
+
           {/* Logo */}
           <Link href="/">
             <Image
               src={Logo}
               alt="ShopSphere Logo"
-              className="h-12 w-12 md:h-16 md:w-16 rounded-full cursor-pointer"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 rounded-full cursor-pointer"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex gap-x-6 text-black font-medium">
+          <ul className="hidden md:flex gap-x-6 text-black font-medium text-sm lg:text-base">
             {navLinks.map((link) => (
               <li key={link.href} className="hover:text-gray-600 transition">
                 <Link href={link.href}>{link.name}</Link>
@@ -49,15 +50,15 @@ const Header = () => {
           </ul>
 
           {/* Desktop Right */}
-          <div className="hidden md:flex items-center gap-x-5 relative">
+          <div className="hidden md:flex items-center gap-x-4 lg:gap-x-6">
             {/* Search */}
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-64 lg:w-72 border rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none"
+                className="w-40 sm:w-56 lg:w-64 border rounded-full pl-9 pr-4 py-2 text-sm sm:text-base focus:outline-none"
               />
-              <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
+              <FiSearch className="absolute left-2 top-2.5 text-gray-500 text-lg" />
             </div>
 
             {/* Wishlist */}
@@ -93,13 +94,13 @@ const Header = () => {
           </div>
 
           {/* Mobile Icons */}
-          <div className="flex items-center gap-x-4 md:hidden relative">
+          <div className="flex md:hidden items-center gap-x-3">
             {/* User */}
             <button
               onClick={() => setUserMenuOpen(!userMenuOpen)}
               className="text-xl cursor-pointer"
             >
-              <FiUser className="bg-[#DB4444] text-2xl text-white rounded-full p-1" />
+              <FiUser className="bg-[#DB4444] text-white text-2xl rounded-full p-1" />
             </button>
 
             {/* Cart */}
@@ -110,7 +111,7 @@ const Header = () => {
               </span>
             </Link>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-2xl"
@@ -147,9 +148,9 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-36 sm:w-48 border rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none"
+                className="w-full sm:w-11/12 border rounded-full pl-9 pr-4 py-2 text-sm focus:outline-none"
               />
-              <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
+              <FiSearch className="absolute left-2 top-2.5 text-gray-500 text-lg" />
             </div>
 
             <Link href="/wishlist" className="flex items-center gap-2">
